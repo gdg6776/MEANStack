@@ -1,0 +1,29 @@
+ <div class="container">
+<form ng-controller = "TwittersController">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 class="text-center">{{vm.title}}</h1>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-sm-4">
+			 <h3> <label class="label label-primary"> Search : &nbsp;&nbsp;<input ng-model="searchid"></label></h3>
+		</div>
+	</div>
+	<div class ="row">
+		<div class="col-sm-4">
+		<h4>List of Users</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+		<li ng-repeat="tweets in vm.tweet | filter: searchid">
+			<a href="#!/twitter/{{tweets._id}}">{{tweets.fromUserName}}</a>
+		</li>
+		</div>
+	</div>
+</form>
+</div>
+
+ 

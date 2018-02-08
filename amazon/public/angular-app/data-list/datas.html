@@ -1,0 +1,37 @@
+
+
+<div class="container">
+<form ng-controller = "AmazonsController">
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h1 class="text-center">{{vm.title}}</h1>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-sm-4">
+			 <h3> <label class="label label-primary"> Search : &nbsp;&nbsp;<input ng-model="searchid"></label></h3>
+		</div>
+	</div>
+
+	<br>
+	<div class ="row">
+		<div class="col-sm-4">
+		<h4>List of food products</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<li ng-repeat="food in vm.foods | filter: searchid">
+		  	<a href="#!/amazon/{{food._id}}">{{food.ProductId}} : {{food.Summary}}</a>
+  			</li>
+		</div>
+	</div>
+</form>
+</div>
+
+
+
+  	
+ 

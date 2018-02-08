@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <h3 class="text-center">Tweets from Users</h3>
+  </div>
+  <div class="row">
+    <ul ng-repeat="comment in vm.tweet.tweets">
+      <li>
+      Tweet: 
+      {{comment.Text}}</li>
+      <li><label>Created At: </label>{{comment.createdAt}}</li>
+    </ul>
+        Comments : <ul ng-repeat="comments in vm.tweet.comment" ng-if= "comments.comment" >
+          <li>{{comments.comment}} ({{comments.UserName}})</li>
+    </ul>
+ </div>
+  <div class="row">
+    <h3 class="text-center">Add Comment</h3>
+  </div>
+  <div class="row">
+    <form name="vm.reviewForm" ng-submit="vm.addComment()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" name="UserName" required ng-minlength="2" ng-model="vm.UserName" placeholder="Enter Name">
+      </div>
+      <div class="form-group">
+        <label for="name">Comments:</label>
+        <textarea name="comment" class="form-control" required ng-model="vm.comment" placeholder="Enter Comments"></textarea>
+      </div>
+      <div class="col-sm-1 form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
